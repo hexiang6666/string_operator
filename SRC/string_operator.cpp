@@ -114,7 +114,7 @@ std::vector<string> string_operator::string_separator(string& s1, string separat
 	
 	while(it<s1.end())
 	{
-		while(get_string_component(it)!=separator)
+		while((get_string_component(it)!=separator)&&(it<s1.end()))     // Modified by [Heixang Wang,Aug,16,2017] to avoid memory wrong access  
 		{
 			temp_string=temp_string+get_string_component(it);
 			it=it+1;
